@@ -89,7 +89,7 @@ server.delete("/api/users/:id", (req, res) => {
 server.put("/api/users/:id", (req, res) => {
   const id = req.params.id;
   const userInfo = req.body;
-  db.update(id, user)
+  db.update(id, userInfo)
     .then(user => {
       if (user) {
         res.status(200).json({ success: true, user });
